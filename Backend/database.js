@@ -7,12 +7,19 @@ const db = new sqlite3.Database("./addresses.db", (err) => {
     console.log("Connected to the database.")
 })
 
-const initializeDatabase = () => {
+
+function  initializeDatabase() {
     db.serialize(() => {
 
         db.run(
-            `CREATE TABLE Users(Id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, Name TEXT, ADDRESS TEXT, PHONE TEXT)`
+            `CREATE TABLE Users(Id INTEGER NOT NULL PRIMARY KEY, Name VARCHAR, PASSWORD TEXT)`
         );
+
+        db.run(`
+            CREATE TABLE ADDRESS(Id INTEGER NOT NULL PRIMARY KEY, USER_ID INTEGER,NAME VARCHAR, ADDRESS TEXT NOT NULL, FOREIGN KEY (USER_ID) REFERENCES USERS(Id) ON DELETE CASCADE )
+        `)
     })
 }
 
+
+module.exports = {db, initializeDatabase}
