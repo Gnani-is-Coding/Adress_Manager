@@ -5,20 +5,19 @@ function Login() {
   return (
     <div className="address-container"> 
 <div className="form-container">
-	<p className="title">Login</p>
+	<p className="title">Register</p>
 	<form className="form">
 		<div className="input-group">
-			<label for="username">Username</label>
-			<input type="text" name="username" id="username" placeholder=""/>
+			<label for="username">Name</label>
+			<input type="text" name="username" id="username" placeholder="Enter your Name"/>
 		</div>
 		<div className="input-group">
 			<label for="password">Password</label>
-			<input type="password" name="password" id="password" placeholder=""/>
+			<input type="password" name="password" id="password" placeholder="Enter your Password"/>
 			<div className="forgot">
-				<a rel="noopener noreferrer" href="#/">Forgot Password ?</a>
 			</div>
 		</div>
-		<button className="sign">Sign in</button>
+		<button className="sign">Register</button>
 		<p className='error-msg'>Wrong Password</p>
 	</form>
 	<div className="social-message">
@@ -44,7 +43,7 @@ function Login() {
 		</button>
 	</div>
 	<p className="signup">Don't have an account?
-		<a rel="noopener noreferrer" href="#/" className="">Sign up</a>
+		<a rel="noopener noreferrer" href="/login" className="">Sign up</a>
 	</p>
 	
 </div>
